@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}{{ project.name }}{% endblock %}
+
+{% block content %}
+<a href="{{ url_for('index') }}" class="back-link">← Back to all projects</a>
+
+<h1>{{ project.name }}</h1>
+
+<div class="project-detail">
+    <div class="description">
+        {{ project.description }}
+    </div>
+    
+    {% if project.technologies %}
+    <h2>Technologies</h2>
+    <div class="technologies">
+        {% for tech in project.technologies %}
+        <span class="tech-tag">{{ tech }}</span>
+        {% endfor %}
+    </div>
+    {% endif %}
+    
+    <div class="links">
+        {% if project.project_link %}
+        <h2>Project Link</h2>
+        <a href="{{ project.project_link }}" target="_blank">{{ project.project_link }}</a>
+        {% endif %}
+        
+        {% if project.github_link %}
+        <h2>GitHub Repository</h2>
+        <a href="{{ project.github_link }}" target="_blank">{{ project.github_link }}</a>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

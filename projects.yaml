@@ -1,0 +1,45 @@
+projects:
+  - name: Project Alpha
+    description: >
+      A cutting-edge project focused on AI development.
+      Learn more at [Project Alpha](https://project-alpha.example.com).
+    technologies:
+      - Python
+      - TensorFlow
+      - Docker
+    project-link: https://project-alpha.example.com
+    github-link: https://github.com/tanayseven/my-repo
+  - name: Project Beta
+    description: >
+      An innovative web application for task management.
+      Check it out at [Project Beta](https://project-beta.example.com).
+    technologies:
+      - JavaScript
+      - React
+      - Node.js
+    project-link: https://project-beta.example.com
+    github-link: https://github.com/tanayseven/my-repo
+  - name: Project Gamma
+    description: >
+      A mobile app that revolutionizes fitness tracking.
+      Discover more at [Project Gamma](https://project-gamma.example.com).
+    technologies:
+      - Kotlin
+      - Firebase
+      - GraphQL
+    project-link: https://project-gamma.example.com
+  - name: Project Delta
+    description: >
+      A blockchain-based solution for secure transactions.
+      Visit [Project Delta](https://project-delta.example.com) for details.
+    github-link: https://github.com/tanayseven/my-repo
+  - name: Project Epsilon
+    description: >
+      A data visualization tool for big data analytics.
+      Explore [Project Epsilon](https://project-epsilon.example.com).
+    technologies:
+      - R
+      - Shiny
+      - D3.js
+    project-link: https://project-epsilon.example.com
+    github-link: https://github.com/tanayseven/my-repo
