@@ -1,0 +1,15 @@
+# Projects list to add
+- [ ] Wordle Solver Bot
+- [ ] My Projects Website
+- [ ] Landing Page RetroOS
+- [ ] Pong C++ DOS
+- [ ] JTankWars
+- [ ] ImpressJS Slide Numbering
+- [ ] Techyon 2013
+- [ ] Game of Life Implementations
+- [ ] Free Mind
+- [ ] Libre Game Floor
+- [ ] Left Unlocked
+- [ ] Wordle Solver Bot
+- [ ] X Mas Greeting Card
+- [ ] Astro Blog

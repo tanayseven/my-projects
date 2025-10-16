@@ -77,101 +77,14 @@ class ProjectFileHandler(FileSystemEventHandler):
                     typer.secho(f"❌ Error validating YAML file: {str(e)}", fg=colors.BRIGHT_RED, err=True)
 
 
-class FreezerFileHandler(FileSystemEventHandler):
-    """File handler that watches for changes and re-freezes the site."""
-    def __init__(self, yaml_path: Path, freezer: Freezer):
-        self.yaml_path = yaml_path
-        self.freezer = freezer
-        self.last_modified = time.time()
-        self.is_freezing = False
-        
-    def on_modified(self, event):
-        # Skip if we're currently freezing to avoid infinite loops
-        if self.is_freezing:
-            return
-            
-        # Debounce to avoid multiple triggers
-        if time.time() - self.last_modified > 0.5:
-            self.last_modified = time.time()
-            
-            # Check if it's a file we care about (YAML or template)
-            if (event.src_path.endswith('.yaml') or
-                event.src_path.endswith('.html') or
-                event.src_path.endswith('.py')):
-                
-                typer.secho(f"\n📝 Changes detected in {event.src_path}", fg=colors.YELLOW)
-                
-                # If it's the YAML file, validate it
-                if event.src_path == os.path.abspath(self.yaml_path):
-                    try:
-                        projects = Projects.load(self.yaml_path)
-                        typer.secho(f"✅ YAML file is valid! Found {len(projects.projects)} projects.",
-                                    fg=colors.BRIGHT_GREEN)
-                    except Exception as e:
-                        typer.secho(f"❌ Error validating YAML file: {str(e)}",
-                                    fg=colors.BRIGHT_RED, err=True)
-                        return
-                
-                # Re-freeze the site
-                try:
-                    self.is_freezing = True
-                    typer.secho(f"🔄 Re-building static site...", fg=colors.YELLOW)
-                    self.freezer.freeze()
-                    typer.secho(f"✅ Static site re-built successfully!", fg=colors.BRIGHT_GREEN)
-                except Exception as e:
-                    typer.secho(f"❌ Error re-building static site: {str(e)}",
-                                fg=colors.BRIGHT_RED, err=True)
-                finally:
-                    self.is_freezing = False
-
-
-class HTTPServerThread(threading.Thread):
-    """Thread that runs a simple HTTP server to serve the static files."""
-    def __init__(self, directory: str, port: int):
-        threading.Thread.__init__(self)
-        self.directory = directory
-        self.port = port
-        self.daemon = True  # Thread will exit when main thread exits
-        
-    def run(self):
-        handler = http.server.SimpleHTTPRequestHandler
-        
-        # Save current directory
-        original_dir = os.getcwd()
-        
-        try:
-            # Change to the build directory for serving files
-            os.chdir(self.directory)
-            
-            with socketserver.TCPServer(("", self.port), handler) as httpd:
-                typer.secho(f"🌐 Serving at http://localhost:{self.port}", fg=colors.BRIGHT_GREEN)
-                httpd.serve_forever()
-        finally:
-            # Restore original directory when thread exits
-            os.chdir(original_dir)
-
-
 @app.command(help="Serve a live preview of the projects and watch for changes")
 def serve(
     yaml_path: Path = typer.Argument(
         DEFAULT_YAML_PATH,
         help="Path to the YAML file containing project data"
-    ),
-    output_dir: Path = typer.Option(
-        BUILD_DIR,
-        "--output",
-        "-o",
-        help="Directory to output the built static site"
-    ),
-    port: int = typer.Option(
-        8080,
-        "--port",
-        "-p",
-        help="Port to serve the site on"
     )
 ) -> None:
-    typer.secho(f"Starting server with live reload on port {port}...", fg=colors.YELLOW)
-    typer.secho(f"Watching for changes. Press Ctrl+C to stop.", fg=colors.YELLOW)
+    typer.secho(f"Watching {yaml_path} for changes. Press Ctrl+C to stop.", fg=colors.YELLOW)
     
     # Initial validation
     try:
@@ -180,32 +93,13 @@ def serve(
         display_projects(projects)
     except Exception as e:
         typer.secho(f"❌ Error validating YAML file: {str(e)}", fg=colors.BRIGHT_RED, err=True)
-        raise typer.Exit(code=1)
 
-    # Configure Flask and Freezer
-    flask_app.config['FREEZER_DESTINATION'] = output_dir
-    flask_app.config['FREEZER_RELATIVE_URLS'] = True
-    freezer = Freezer(flask_app)
     
-    # Create output directory if it doesn't exist
-    os.makedirs(output_dir, exist_ok=True)
-    
-    # Initial freeze
-    typer.secho(f"Building initial static site in {output_dir}...", fg=colors.YELLOW)
-    freezer.freeze()
-    typer.secho(f"✅ Static site built successfully!", fg=colors.BRIGHT_GREEN)
-    
-    # Set up file watcher for the project directory
-    event_handler = FreezerFileHandler(yaml_path, freezer)
+    # Set up file watcher
+    event_handler = ProjectFileHandler(yaml_path)
     observer = Observer()
-    
-    # Watch the current directory and template directory recursively
-    observer.schedule(event_handler, path=".", recursive=True)
+    observer.schedule(event_handler, path=os.path.dirname(os.path.abspath(yaml_path)) or ".", recursive=False)
     observer.start()
-    
-    # Start a simple HTTP server to serve the static files
-    server_thread = HTTPServerThread(str(output_dir), port)
-    server_thread.start()
     
     try:
         while True:
