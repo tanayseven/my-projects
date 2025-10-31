@@ -1,118 +1,501 @@
-{#
-Simple, sweet and colourful Tailwind + Jinja template for a projects page.
-Usage:
-- Parse your YAML into a Python dict and pass `projects` to the template context.
-- If your YAML `description` fields contain Markdown (like the sample), convert them to HTML on the server side
-  (e.g. using Python-Markdown: `from markdown import markdown; project['description'] = markdown(text)`), or register a Jinja filter.
-- The template expects `projects` to be a list of dicts with keys shown in your YAML (name, description, technologies, project-link, github-link).
-
-Example (Flask-like):
-    from flask import render_template
-    import yaml
-    from markdown import markdown
-
-    with open('projects.yml') as f:
-        data = yaml.safe_load(f)
-    for p in data['projects']:
-        p['description'] = markdown(p.get('description', ''))
-    return render_template('projects_page_jinja.html', projects=data['projects'])
-#}
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Projects — Portfolio</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    /* small custom gradient map for card accents */
-    .accent-1 { background: linear-gradient(135deg,#ff9a9e 0%,#fecfef 100%); }
-    .accent-2 { background: linear-gradient(135deg,#a18cd1 0%,#fbc2eb 100%); }
-    .accent-3 { background: linear-gradient(135deg,#f6d365 0%,#fda085 100%); }
-    .accent-4 { background: linear-gradient(135deg,#84fab0 0%,#8fd3f4 100%); }
-    .accent-5 { background: linear-gradient(135deg,#cfd9df 0%,#e2ebf0 100%); }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanay's Projects</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
 </head>
-<body class="bg-gradient-to-b from-white via-sky-50 to-indigo-50 min-h-screen antialiased">
-  <header class="max-w-6xl mx-auto px-6 py-10">
-    <div class="flex items-center justify-between">
-      <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">✨ My Projects</h1>
-      <p class="text-sm text-slate-600">A colourful showcase of things I built</p>
-    </div>
-  </header>
-
-  <main class="max-w-6xl mx-auto px-6 pb-20">
-    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-      {# loop through projects - index used to vary accent #}
-      {% for project in projects %}
-      {% set idx = loop.index0 %}
-      <article class="relative rounded-2xl overflow-hidden shadow-lg transform hover:-translate-y-1 transition p-1">
-        <div class="h-full rounded-2xl p-6 bg-white/80 backdrop-blur-sm">
-          <div class="flex items-start justify-between">
-            <div>
-              <h2 class="text-xl font-semibold">{{ project.name }}</h2>
-              <div class="mt-2 text-sm text-slate-600 prose max-w-none">
-                {{ project.description | safe }} {# server should convert markdown -> HTML or ensure safe markup #}
-              </div>
+<body class="dark-mode">
+    <header>
+        <div class="container">
+            <h1>Tanay's Projects</h1>
+            <p class="subtitle">Hi, I'm Tanay. This is the showcase of some of my creative endevours that I've indulged in</p>
+            <div class="theme-toggle">
+                <button id="theme-toggle-btn">Light Mode</button>
             </div>
-            <div class="ml-4 flex-shrink-0">
-              {# colored accent circle #}
-              <div class="w-12 h-12 rounded-full shadow-md flex items-center justify-center text-white font-bold text-sm"
-                   style="background: none;">
-                {% if idx % 5 == 0 %}
-                  <div class="accent-1 w-12 h-12 rounded-full"></div>
-                {% elif idx % 5 == 1 %}
-                  <div class="accent-2 w-12 h-12 rounded-full"></div>
-                {% elif idx % 5 == 2 %}
-                  <div class="accent-3 w-12 h-12 rounded-full"></div>
-                {% elif idx % 5 == 3 %}
-                  <div class="accent-4 w-12 h-12 rounded-full"></div>
-                {% else %}
-                  <div class="accent-5 w-12 h-12 rounded-full"></div>
-                {% endif %}
-              </div>
-            </div>
-          </div>
-
-          {# technologies badges #}
-          {% if project.technologies %}
-          <div class="mt-4 flex flex-wrap gap-2">
-            {% for tech in project.technologies %}
-            <span class="text-xs font-medium px-2 py-1 rounded-full bg-slate-100 ring-1 ring-slate-200">{{ tech }}</span>
-            {% endfor %}
-          </div>
-          {% endif %}
-
-          {# links #}
-          <div class="mt-6 flex items-center gap-3">
-            {% if project['project-link'] %}
-            <a href="{{ project['project-link'] }}" target="_blank" rel="noopener noreferrer"
-               class="inline-flex items-center gap-2 rounded-md px-3 py-2 bg-indigo-600 text-white text-sm font-semibold shadow hover:bg-indigo-700">
-              View Project
-n            </a>
-            {% endif %}
-
-            {% if project['github-link'] %}
-            <a href="{{ project['github-link'] }}" target="_blank" rel="noopener noreferrer"
-               class="inline-flex items-center gap-2 rounded-md px-3 py-2 bg-slate-800 text-white text-sm font-medium shadow hover:brightness-110">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.38 7.86 10.9.58.1.8-.25.8-.55 0-.28-.01-1.03-.02-2.02-3.2.7-3.88-1.54-3.88-1.54-.53-1.36-1.3-1.72-1.3-1.72-1.06-.72.08-.71.08-.71 1.18.08 1.8 1.21 1.8 1.21 1.04 1.78 2.73 1.27 3.4.97.11-.76.41-1.27.74-1.56-2.55-.29-5.24-1.28-5.24-5.71 0-1.26.45-2.3 1.2-3.11-.12-.29-.52-1.47.11-3.07 0 0 .98-.31 3.2 1.19a11.1 11.1 0 0 1 2.92-.39c.99.01 1.99.13 2.92.39 2.21-1.5 3.18-1.19 3.18-1.19.63 1.6.24 2.78.12 3.07.75.81 1.19 1.85 1.19 3.11 0 4.44-2.7 5.42-5.27 5.7.42.36.79 1.1.79 2.22 0 1.6-.01 2.89-.01 3.29 0 .3.21.66.81.55C20.71 21.38 24 17.08 24 12c0-6.27-5.23-11.5-12-11.5z"/></svg>
-              <span>GitHub</span>
-            </a>
-            {% endif %}
-
-            {# fallback small meta #}
-            <span class="ml-auto text-xs text-slate-400">{% if project.technologies %}{{ project.technologies | length }} tech{% else %}No tech listed{% endif %}</span>
-          </div>
         </div>
-      </article>
-      {% endfor %}
-    </div>
+    </header>
 
-    {# small footer #}
-    <footer class="mt-12 text-center text-sm text-slate-500">
-      Built with ❤️ · Tanay PrabhuDesai
+    <main class="container">
+        <section class="projects-section">
+            <h2>Currently in development</h2>
+            <div class="projects-grid">
+                <!-- Project Card 1 -->
+                <div class="project-card">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+                        <div class="card-image-overlay">
+                            <h3 class="project-title">AI-Powered Task Manager</h3>
+                            <span class="project-date">Oct 2025</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <p class="project-description">A task management application that uses AI to prioritize tasks, suggest optimal work times, and provide productivity insights based on user patterns.</p>
+                        <div class="project-tech">
+                            <span class="tech-chip">React</span>
+                            <span class="tech-chip">Node.js</span>
+                            <span class="tech-chip">TensorFlow.js</span>
+                            <span class="tech-chip">MongoDB</span>
+                        </div>
+                        <div class="card-links">
+                            <a href="https://ai-task-manager.example.com" class="card-link" target="_blank">Check it out</a>
+                            <a href="https://github.com/tanaypd/ai-task-manager" class="card-link" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="project-card">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+                        <div class="card-image-overlay">
+                            <h3 class="project-title">Sustainable Living App</h3>
+                            <span class="project-date">Sep 2025</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <p class="project-description">An application that helps users track their carbon footprint, suggests eco-friendly alternatives for daily activities, and connects them with local sustainability initiatives.</p>
+                        <div class="project-tech">
+                            <span class="tech-chip">Flutter</span>
+                            <span class="tech-chip">Firebase</span>
+                            <span class="tech-chip">Google Maps API</span>
+                            <span class="tech-chip">Chart.js</span>
+                        </div>
+                        <div class="card-links">
+                            <a href="https://eco-living.example.com" class="card-link" target="_blank">Check it out</a>
+                            <a href="https://github.com/tanaypd/sustainable-living" class="card-link" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="project-card">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1593508512255-86ab42a8e620?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+                        <div class="card-image-overlay">
+                            <h3 class="project-title">Virtual Reality Fitness</h3>
+                            <span class="project-date">Aug 2025</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <p class="project-description">A VR fitness platform that gamifies workout routines, offers immersive training environments, and provides real-time feedback on form and performance.</p>
+                        <div class="project-tech">
+                            <span class="tech-chip">Unity</span>
+                            <span class="tech-chip">C#</span>
+                            <span class="tech-chip">Oculus SDK</span>
+                            <span class="tech-chip">WebXR</span>
+                        </div>
+                        <div class="card-links">
+                            <a href="https://vr-fitness.example.com" class="card-link" target="_blank">Check it out</a>
+                            <a href="https://github.com/tanaypd/vr-fitness" class="card-link" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 4 -->
+                <div class="project-card">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1614064641938-3bbee52942c7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+                        <div class="card-image-overlay">
+                            <h3 class="project-title">Blockchain Voting System</h3>
+                            <span class="project-date">Jul 2025</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <p class="project-description">A secure, transparent voting system built on blockchain technology, ensuring tamper-proof elections and real-time result verification.</p>
+                        <div class="project-tech">
+                            <span class="tech-chip">Ethereum</span>
+                            <span class="tech-chip">Solidity</span>
+                            <span class="tech-chip">Web3.js</span>
+                            <span class="tech-chip">React</span>
+                        </div>
+                        <div class="card-links">
+                            <a href="https://blockchain-vote.example.com" class="card-link" target="_blank">Check it out</a>
+                            <a href="https://github.com/tanaypd/blockchain-voting" class="card-link" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 5 -->
+                <div class="project-card">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1567177662154-dfeb4c93b6ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+                        <div class="card-image-overlay">
+                            <h3 class="project-title">Augmented Reality Navigation</h3>
+                            <span class="project-date">Jun 2025</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <p class="project-description">An AR navigation app that overlays directional guidance on the real world, highlighting points of interest and providing contextual information about surroundings.</p>
+                        <div class="project-tech">
+                            <span class="tech-chip">ARKit</span>
+                            <span class="tech-chip">ARCore</span>
+                            <span class="tech-chip">Swift</span>
+                            <span class="tech-chip">Kotlin</span>
+                        </div>
+                        <div class="card-links">
+                            <a href="https://ar-nav.example.com" class="card-link" target="_blank">Check it out</a>
+                            <a href="https://github.com/tanaypd/ar-navigation" class="card-link" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 6 -->
+                <div class="project-card">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1558002038-1055e2dae1d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+                        <div class="card-image-overlay">
+                            <h3 class="project-title">Smart Home Energy Monitor</h3>
+                            <span class="project-date">May 2025</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <p class="project-description">A system that monitors household energy consumption, identifies energy-hungry appliances, and suggests optimization strategies to reduce electricity bills.</p>
+                        <div class="project-tech">
+                            <span class="tech-chip">Raspberry Pi</span>
+                            <span class="tech-chip">Python</span>
+                            <span class="tech-chip">MQTT</span>
+                            <span class="tech-chip">InfluxDB</span>
+                        </div>
+                        <div class="card-links">
+                            <a href="https://energy-monitor.example.com" class="card-link" target="_blank">Check it out</a>
+                            <a href="https://github.com/tanaypd/energy-monitor" class="card-link" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 7 -->
+                <div class="project-card">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+                        <div class="card-image-overlay">
+                            <h3 class="project-title">Personalized Learning Platform</h3>
+                            <span class="project-date">Apr 2025</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <p class="project-description">An adaptive learning platform that tailors educational content based on individual learning styles, progress, and goals, with interactive exercises and real-time feedback.</p>
+                        <div class="project-tech">
+                            <span class="tech-chip">Vue.js</span>
+                            <span class="tech-chip">Express</span>
+                            <span class="tech-chip">PostgreSQL</span>
+                            <span class="tech-chip">Machine Learning</span>
+                        </div>
+                        <div class="card-links">
+                            <a href="https://adaptive-learning.example.com" class="card-link" target="_blank">Check it out</a>
+                            <a href="https://github.com/tanaypd/personalized-learning" class="card-link" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 8 -->
+                <div class="project-card">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+                        <div class="card-image-overlay">
+                            <h3 class="project-title">Quantum Computing Simulator</h3>
+                            <span class="project-date">Mar 2025</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <p class="project-description">A web-based simulator for quantum computing algorithms, allowing users to experiment with quantum gates, circuits, and algorithms without specialized hardware.</p>
+                        <div class="project-tech">
+                            <span class="tech-chip">TypeScript</span>
+                            <span class="tech-chip">WebAssembly</span>
+                            <span class="tech-chip">Three.js</span>
+                            <span class="tech-chip">Python</span>
+                        </div>
+                        <div class="card-links">
+                            <a href="https://quantum-sim.example.com" class="card-link" target="_blank">Check it out</a>
+                            <a href="https://github.com/tanaypd/quantum-simulator" class="card-link" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 9 -->
+                <div class="project-card">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+                        <div class="card-image-overlay">
+                            <h3 class="project-title">Decentralized Social Network</h3>
+                            <span class="project-date">Feb 2025</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <p class="project-description">A social media platform built on decentralized protocols, giving users full control over their data and content without centralized authority or data harvesting.</p>
+                        <div class="project-tech">
+                            <span class="tech-chip">IPFS</span>
+                            <span class="tech-chip">Ethereum</span>
+                            <span class="tech-chip">React</span>
+                            <span class="tech-chip">GraphQL</span>
+                        </div>
+                        <div class="card-links">
+                            <a href="https://decentralized-social.example.com" class="card-link" target="_blank">Check it out</a>
+                            <a href="https://github.com/tanaypd/decentralized-social" class="card-link" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 10 -->
+                <div class="project-card">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1507582020474-9a35b7d455d9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+                        <div class="card-image-overlay">
+                            <h3 class="project-title">Autonomous Drone Delivery</h3>
+                            <span class="project-date">Jan 2025</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <p class="project-description">A system for managing autonomous drone deliveries, including route optimization, obstacle avoidance, and real-time tracking for urban package delivery.</p>
+                        <div class="project-tech">
+                            <span class="tech-chip">ROS</span>
+                            <span class="tech-chip">Python</span>
+                            <span class="tech-chip">Computer Vision</span>
+                            <span class="tech-chip">React Native</span>
+                        </div>
+                        <div class="card-links">
+                            <a href="https://drone-delivery.example.com" class="card-link" target="_blank">Check it out</a>
+                            <a href="https://github.com/tanaypd/drone-delivery" class="card-link" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects-section">
+            <h2>Archived</h2>
+            <div class="projects-grid">
+                <!-- Project Card 1 -->
+                <div class="project-card">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+                        <div class="card-image-overlay">
+                            <h3 class="project-title">Neural Network Visualizer</h3>
+                            <span class="project-date">Dec 2024</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <p class="project-description">An interactive tool for visualizing neural network architectures, training processes, and decision boundaries to help understand deep learning concepts.</p>
+                        <div class="project-tech">
+                            <span class="tech-chip">D3.js</span>
+                            <span class="tech-chip">TensorFlow.js</span>
+                            <span class="tech-chip">React</span>
+                            <span class="tech-chip">Flask</span>
+                        </div>
+                        <div class="card-links">
+                            <a href="https://nn-visualizer.example.com" class="card-link" target="_blank">Check it out</a>
+                            <a href="https://github.com/tanaypd/nn-visualizer" class="card-link" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="project-card">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1621761191319-c6fb62004040?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+                        <div class="card-image-overlay">
+                            <h3 class="project-title">Cryptocurrency Portfolio Tracker</h3>
+                            <span class="project-date">Nov 2024</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <p class="project-description">A comprehensive dashboard for tracking cryptocurrency investments, with real-time price updates, portfolio analytics, and tax reporting features.</p>
+                        <div class="project-tech">
+                            <span class="tech-chip">Angular</span>
+                            <span class="tech-chip">Node.js</span>
+                            <span class="tech-chip">CoinGecko API</span>
+                            <span class="tech-chip">MongoDB</span>
+                        </div>
+                        <div class="card-links">
+                            <a href="https://crypto-tracker.example.com" class="card-link" target="_blank">Check it out</a>
+                            <a href="https://github.com/tanaypd/crypto-tracker" class="card-link" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="project-card">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+                        <div class="card-image-overlay">
+                            <h3 class="project-title">Remote Team Collaboration Tool</h3>
+                            <span class="project-date">Oct 2024</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <p class="project-description">A platform designed for remote teams to collaborate effectively, featuring virtual whiteboards, asynchronous video messaging, and project management tools.</p>
+                        <div class="project-tech">
+                            <span class="tech-chip">React</span>
+                            <span class="tech-chip">Socket.io</span>
+                            <span class="tech-chip">WebRTC</span>
+                            <span class="tech-chip">Express</span>
+                        </div>
+                        <div class="card-links">
+                            <a href="https://remote-collab.example.com" class="card-link" target="_blank">Check it out</a>
+                            <a href="https://github.com/tanaypd/remote-collaboration" class="card-link" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 4 -->
+                <div class="project-card">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1555952494-efd681c7e3f9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+                        <div class="card-image-overlay">
+                            <h3 class="project-title">Natural Language Processing API</h3>
+                            <span class="project-date">Sep 2024</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <p class="project-description">A comprehensive API for natural language processing tasks, including sentiment analysis, entity recognition, language detection, and text summarization.</p>
+                        <div class="project-tech">
+                            <span class="tech-chip">Python</span>
+                            <span class="tech-chip">spaCy</span>
+                            <span class="tech-chip">FastAPI</span>
+                            <span class="tech-chip">Docker</span>
+                        </div>
+                        <div class="card-links">
+                            <a href="https://nlp-api.example.com" class="card-link" target="_blank">Check it out</a>
+                            <a href="https://github.com/tanaypd/nlp-api" class="card-link" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 5 -->
+                <div class="project-card">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+                        <div class="card-image-overlay">
+                            <h3 class="project-title">3D Printing Marketplace</h3>
+                            <span class="project-date">Aug 2024</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <p class="project-description">An online marketplace connecting 3D printing enthusiasts with designers and customers, facilitating the buying, selling, and printing of 3D models.</p>
+                        <div class="project-tech">
+                            <span class="tech-chip">Next.js</span>
+                            <span class="tech-chip">Stripe</span>
+                            <span class="tech-chip">Three.js</span>
+                            <span class="tech-chip">PostgreSQL</span>
+                        </div>
+                        <div class="card-links">
+                            <a href="https://3d-marketplace.example.com" class="card-link" target="_blank">Check it out</a>
+                            <a href="https://github.com/tanaypd/3d-marketplace" class="card-link" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 6 -->
+                <div class="project-card">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+                        <div class="card-image-overlay">
+                            <h3 class="project-title">Gesture-Controlled Music Player</h3>
+                            <span class="project-date">Jul 2024</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <p class="project-description">A music player that can be controlled through hand gestures captured by a webcam, allowing for touchless interaction with music playback.</p>
+                        <div class="project-tech">
+                            <span class="tech-chip">MediaPipe</span>
+                            <span class="tech-chip">JavaScript</span>
+                            <span class="tech-chip">Web Audio API</span>
+                            <span class="tech-chip">TensorFlow.js</span>
+                        </div>
+                        <div class="card-links">
+                            <a href="https://gesture-music.example.com" class="card-link" target="_blank">Check it out</a>
+                            <a href="https://github.com/tanaypd/gesture-music" class="card-link" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 7 -->
+                <div class="project-card">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+                        <div class="card-image-overlay">
+                            <h3 class="project-title">Automated Content Moderator</h3>
+                            <span class="project-date">Jun 2024</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <p class="project-description">An AI-powered content moderation system that automatically detects and filters inappropriate text, images, and videos for online platforms.</p>
+                        <div class="project-tech">
+                            <span class="tech-chip">Python</span>
+                            <span class="tech-chip">TensorFlow</span>
+                            <span class="tech-chip">OpenCV</span>
+                            <span class="tech-chip">FastAPI</span>
+                        </div>
+                        <div class="card-links">
+                            <a href="https://content-moderator.example.com" class="card-link" target="_blank">Check it out</a>
+                            <a href="https://github.com/tanaypd/content-moderator" class="card-link" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 8 -->
+                <div class="project-card">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1506260408121-e353d10b87c7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+                        <div class="card-image-overlay">
+                            <h3 class="project-title">Procedural Landscape Generator</h3>
+                            <span class="project-date">May 2024</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <p class="project-description">A tool that generates realistic 3D landscapes procedurally, with customizable terrain, vegetation, water bodies, and weather conditions.</p>
+                        <div class="project-tech">
+                            <span class="tech-chip">Unity</span>
+                            <span class="tech-chip">C#</span>
+                            <span class="tech-chip">Shader Graph</span>
+                            <span class="tech-chip">Compute Shaders</span>
+                        </div>
+                        <div class="card-links">
+                            <a href="https://landscape-gen.example.com" class="card-link" target="_blank">Check it out</a>
+                            <a href="https://github.com/tanaypd/landscape-generator" class="card-link" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 9 -->
+                <div class="project-card">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+                        <div class="card-image-overlay">
+                            <h3 class="project-title">Peer-to-Peer File Sharing</h3>
+                            <span class="project-date">Apr 2024</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <p class="project-description">A decentralized file sharing application that allows direct peer-to-peer transfers without intermediary servers, with end-to-end encryption.</p>
+                        <div class="project-tech">
+                            <span class="tech-chip">WebRTC</span>
+                            <span class="tech-chip">JavaScript</span>
+                            <span class="tech-chip">Electron</span>
+                            <span class="tech-chip">libp2p</span>
+                        </div>
+                        <div class="card-links">
+                            <a href="https://p2p-share.example.com" class="card-link" target="_blank">Check it out</a>
+                            <a href="https://github.com/tanaypd/p2p-file-sharing" class="card-link" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 10 -->
+                <div class="project-card">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+                        <div class="card-image-overlay">
+                            <h3 class="project-title">Accessibility Checker Extension</h3>
+                            <span class="project-date">Mar 2024</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <p class="project-description">A browser extension that analyzes web pages for accessibility issues and suggests improvements to make content more inclusive for all users.</p>
+                        <div class="project-tech">
+                            <span class="tech-chip">JavaScript</span>
+                            <span class="tech-chip">WCAG Guidelines</span>
+                            <span class="tech-chip">Chrome Extensions API</span>
+                            <span class="tech-chip">Axe Core</span>
+                        </div>
+                        <div class="card-links">
+                            <a href="https://a11y-checker.example.com" class="card-link" target="_blank">Check it out</a>
+                            <a href="https://github.com/tanaypd/accessibility-checker" class="card-link" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Made with <span class="emoji" title="love">❤️</span> and <span class="emoji" title="sweat">💦</span> by Tanay PrabhuDesai</p>
+        </div>
     </footer>
-  </main>
+
+    <script src="../static/js/projects.js"></script>
+    <script src="../static/js/main.js"></script>
 </body>
 </html>

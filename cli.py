@@ -2,7 +2,6 @@ import os
 import time
 import socket
 import threading
-from getpass import fallback_getpass
 from pathlib import Path
 
 import typer
@@ -29,8 +28,8 @@ def display_projects(projects: Projects) -> None:
         print(f"\n{i}. {project.name}")
         print(f"   Description: {project.description.strip()}")
         
-        if project.technologies:
-            tech_list = ", ".join(project.technologies)
+        if project.tools:
+            tech_list = ", ".join(project.tools)
             print(f"   Technologies: {tech_list}")
         
         if project.project_link:

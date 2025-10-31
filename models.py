@@ -4,10 +4,9 @@ from pydantic import BaseModel, Field
 import yaml
 
 class Project(BaseModel):
-    """Model representing a single project."""
     name: str
     description: str
-    technologies: Optional[List[str]] = None
+    tools: Optional[List[str]] = None
     project_link: Optional[str] = Field(None, alias="project-link")
     github_link: Optional[str] = Field(None, alias="github-link")
 
@@ -16,7 +15,6 @@ class Project(BaseModel):
 
 
 class Projects(BaseModel):
-    """Model representing a collection of projects."""
     projects: List[Project]
 
     @classmethod
