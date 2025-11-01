@@ -221,11 +221,21 @@ main {
     transition: var(--transition);
     text-align: center;
     flex: 1;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    outline: none;
 }
 
 /* Card link hover state - only applies to non-disabled links */
 .card-link:not(.disabled):hover {
     background-color: var(--primary-color);
+}
+
+/* Button focus state */
+.card-link:focus:not(.disabled) {
+    outline: 2px solid var(--accent-color);
+    outline-offset: -2px;
 }
 
 /* Disabled card link styles - using higher specificity selectors */
@@ -243,8 +253,24 @@ main {
     border: 1px dashed var(--disabled-border-light);
 }
 
+/* Ensure disabled attribute works properly with button elements */
+.card-links button[disabled] {
+    background-color: var(--disabled-bg-light);
+    color: var(--disabled-color-light);
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    text-decoration: line-through;
+    border: 1px dashed var(--disabled-border-light);
+}
+
 /* Dark mode disabled card link styles */
-.dark-mode .card-links .card-link.disabled {
+.dark-mode .card-links .card-link.disabled,
+.dark-mode .card-links button[disabled] {
     background-color: var(--disabled-bg-dark);
     color: var(--disabled-color-dark);
     border: 1px dashed var(--disabled-border-dark);

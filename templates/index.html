@@ -48,16 +48,18 @@
                     </div>
                     <div class="card-button-section">
                         <div class="card-links">
-                            <a href="{{ project.project_link if project.project_link else 'javascript:void(0)' }}"
+                            <button
+                               {% if project.project_link %}onclick="window.open('{{ project.project_link }}', '_blank')"{% endif %}
                                class="card-link card-link-left {% if not project.project_link %}disabled{% endif %}"
-                               {% if project.project_link %}target="_blank"{% endif %}>
+                               {% if not project.project_link %}disabled{% endif %}>
                                Check it out
-                            </a>
-                            <a href="{{ project.github_link if project.github_link else 'javascript:void(0)' }}"
+                            </button>
+                            <button
+                               {% if project.github_link %}onclick="window.open('{{ project.github_link }}', '_blank')"{% endif %}
                                class="card-link card-link-right {% if not project.github_link %}disabled{% endif %}"
-                               {% if project.github_link %}target="_blank"{% endif %}>
+                               {% if not project.github_link %}disabled{% endif %}>
                                GitHub
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -94,16 +96,18 @@
                     </div>
                     <div class="card-button-section">
                         <div class="card-links">
-                            <a href="{{ project.project_link if project.project_link else 'javascript:void(0)' }}"
+                            <button
+                               {% if project.project_link %}onclick="window.open('{{ project.project_link }}', '_blank')"{% endif %}
                                class="card-link card-link-left {% if not project.project_link %}disabled{% endif %}"
-                               {% if project.project_link %}target="_blank"{% endif %}>
+                               {% if not project.project_link %}disabled{% endif %}>
                                Check it out
-                            </a>
-                            <a href="{{ project.github_link if project.github_link else 'javascript:void(0)' }}"
+                            </button>
+                            <button
+                               {% if project.github_link %}onclick="window.open('{{ project.github_link }}', '_blank')"{% endif %}
                                class="card-link card-link-right {% if not project.github_link %}disabled{% endif %}"
-                               {% if project.github_link %}target="_blank"{% endif %}>
+                               {% if not project.github_link %}disabled{% endif %}>
                                GitHub
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -114,7 +118,7 @@
 
     <footer>
         <div class="container">
-            <p>Made with <span class="emoji" title="love">❤️</span> and <span class="emoji" title="sweat">💦</span> by Tanay PrabhuDesai</p>
+            <p>Made with <span class="emoji" title="love">❤️</span> and <span class="emoji" title="sweat">😓</span> by Tanay PrabhuDesai</p>
         </div>
     </footer>
 

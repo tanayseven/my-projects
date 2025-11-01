@@ -10,7 +10,6 @@ projects:
       - CSS
       - JavaScript
       - React
-    project-link: https://myprojects.example.com
     github-link: https://github.com/tanayseven/my-projects-website
   - name: Landing Page RetroOS
     description: >
@@ -24,7 +23,6 @@ projects:
       - JavaScript
       - SVG
     project-link: https://retroos.example.com
-    github-link: https://github.com/tanayseven/retroos
   - name: ImpressJS Slide Numbering
     description: >
       A plugin for ImpressJS that adds slide numbering functionality to presentations.
