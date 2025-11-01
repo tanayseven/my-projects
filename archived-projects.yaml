@@ -2,49 +2,43 @@ projects:
   - name: Wordle Solver Bot
     description: >
       An automated bot that solves Wordle puzzles using statistical analysis and word frequency algorithms.
-      See it in action at Wordle Solver.
+      See it in action at Wordle Solver
     image: https://example.com/images/wordle-solver.png
     date: July 2022
     tools:
       - Python
-      - Natural Language Processing
-      - Statistical Analysis
-    project-link: https://wordlesolver.example.com
-    github-link: https://github.com/tanayseven/wordle-solver
+      - Computer Vision
+      - AI
+      - Bots
+      - Puzzle Solving
+    project-link: https://www.youtube.com/watch?v=gvoLCMiBv8o
+    github-link: https://github.com/tanayseven/wordle-solver-bot
   - name: Pong C++ DOS
     description: >
-      A recreation of the classic Pong game for DOS systems, written in C++ with retro graphics.
-      Download it at Pong C++ DOS.
-    image: https://example.com/images/pong-cpp-dos.png
+      A recreation of the classic Pong game for DOS systems, written in C++ with retro graphics
     date: May 2022
     tools:
       - C++
-      - DOS
+      - Turbo C++
       - Assembly
-    project-link: https://pongcppdos.example.com
-    github-link: https://github.com/tanayseven/pong-cpp-dos
+    github-link: https://github.com/tanayseven/pong-archive
   - name: JTankWars
     description: >
-      A Java-based tank battle game with multiplayer capabilities and customizable maps.
-      Play it at JTankWars.
-    image: https://example.com/images/jtankwars.png
-    date: March 2022
+      A Java-based tank battle game with multiple levels, AI opponents, and different levels.
+      This was my final year project for my diploma course in Agnel Polytechnic, Verna, Goa.
+    date: March 2014
     tools:
       - Java
-      - JavaFX
-      - Socket Programming
-    project-link: https://jtankwars.example.com
-    github-link: https://github.com/tanayseven/jtankwars
+      - Java Swing
+    github-link: https://github.com/tanayseven/j-tank-wars
   - name: Techyon 2013
     description: >
-      A website for the Techyon 2013 technical festival, featuring event details and registration.
-      Archive available at Techyon 2013.
-    image: https://example.com/images/techyon-2013.png
+      A website for the Techyon 2013 technical festival at my college, featuring event details and registration forms
     date: September 2013
     tools:
-      - PHP
-      - MySQL
+      - HTML
+      - CSS
+      - JavaScript
       - jQuery
-      - Bootstrap
-    project-link: https://techyon2013.example.com
-    github-link: https://github.com/tanayseven/techyon-2013
+    project-link: https://tanay.tech/techyon2013/
+    github-link: https://github.com/tanayseven/techyon2013

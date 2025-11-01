@@ -2,93 +2,96 @@ projects:
   - name: My Projects Website
     description: >
       A personal portfolio website showcasing various projects and skills.
-      Explore my work at My Projects Website.
-    image: https://example.com/images/my-projects-website.png
+      Explore my work at My Projects Website
     date: November 2023
     tools:
       - HTML
       - CSS
       - JavaScript
-      - React
-    github-link: https://github.com/tanayseven/my-projects-website
+      - Python
+      - Frozen-Flask
+    github-link: https://github.com/tanayseven/my-projects
+    project-link: https://projects.tanay.tech
   - name: Landing Page RetroOS
     description: >
-      A retro-styled operating system interface landing page with nostalgic design elements.
-      Check it out at RetroOS.
-    image: https://example.com/images/retroos.png
+      A retro-styled operating system interface landing page with nostalgic retro terminal that
+      feels and looks like an old-school OS.
+      Experience the nostalgia at RetroOS Landing Page
     date: August 2023
     tools:
       - HTML
       - CSS
       - JavaScript
       - SVG
-    project-link: https://retroos.example.com
+    github-link: https://github.com/tanayseven/tanayseven.github.io
+    project-link: https://tanay.tech/
   - name: ImpressJS Slide Numbering
     description: >
       A plugin for ImpressJS that adds slide numbering functionality to presentations.
-      Enhance your presentations at ImpressJS Slide Numbering.
-    image: https://example.com/images/impressjs-slide-numbering.png
+      Enhance your presentations at ImpressJS Slide Numbering
     date: June 2023
     tools:
       - JavaScript
       - ImpressJS
       - CSS
-    project-link: https://impressjs-slide-numbering.example.com
-    github-link: https://github.com/tanayseven/impressjs-slide-numbering
+      - HTML
+    project-link: https://tanay.tech/ImpressJS-Slide-Numbering/
+    github-link: https://github.com/tanayseven/ImpressJS-Slide-Numbering
   - name: Game of Life Implementations
     description: >
-      Multiple implementations of Conway's Game of Life in different programming languages.
-      Explore the simulations at Game of Life.
-    image: https://example.com/images/game-of-life.png
+      Multiple implementations of Conway's Game of Life in different programming languages
     date: April 2023
     tools:
       - JavaScript
       - Python
       - Rust
       - Canvas
-    project-link: https://game-of-life.example.com
     github-link: https://github.com/tanayseven/game-of-life
   - name: Free Mind
     description: >
-      A mindfulness and meditation application to help users reduce stress and improve focus.
-      Find your peace at Free Mind.
-    image: https://example.com/images/free-mind.png
+      A mindfulness and focusing application to help users  improve focus by blocking apps.
     date: March 2023
     tools:
-      - React Native
-      - Firebase
-      - Node.js
-    project-link: https://freemind.example.com
+      - Svelte
+      - Go
+      - Wails
+      - Linux
+      - Windows
+      - macOS
+    project-link: https://freemind.tanay.tech
     github-link: https://github.com/tanayseven/free-mind
   - name: Libre Game Floor
     description: >
-      An open-source platform for creating and sharing browser-based games.
-      Join the community at Libre Game Floor.
+      A free and open-source set of classic mini-games playable across multiple platforms.
     image: https://example.com/images/libre-game-floor.png
-    date: February 2023
+    date: September 2025
     tools:
-      - JavaScript
-      - WebGL
-      - Node.js
-      - MongoDB
-    project-link: https://libregamefloor.example.com
+      - Go
+      - Ebitengine
+      - Android
+      - iOS
+      - Browser
+      - Windows
+      - macOS
+      - Linux
+    project-link: https://libregamefloor.tanay.tech
     github-link: https://github.com/tanayseven/libre-game-floor
   - name: Left Unlocked
     description: >
-      A cybersecurity awareness game teaching users about common security vulnerabilities.
-      Test your security knowledge at Left Unlocked.
+      A prank and awareness webpage that shows a message for users who leave their devices
+      unlocked in public places or at work places
     image: https://example.com/images/left-unlocked.png
     date: January 2023
     tools:
       - Unity
       - C#
       - WebGL
-    project-link: https://leftunlocked.example.com
+    project-link: https://leftunlocked.tanay.tech/
     github-link: https://github.com/tanayseven/left-unlocked
   - name: X Mas Greeting Card
     description: >
       An interactive digital Christmas greeting card with animations and personalization options.
-      Spread holiday cheer at X Mas Card.
+      Spread holiday cheer at X Mas Card
     image: https://example.com/images/xmas-card.png
     date: December 2022
     tools:
@@ -100,8 +103,8 @@ projects:
     github-link: https://github.com/tanayseven/xmas-card
   - name: Astro Blog
     description: >
-      A fast, modern blog built with Astro framework featuring markdown support and optimized performance.
-      Read articles at Astro Blog.
+      A fast, modern blog built with Astro framework featuring markdown support and optimized performance
+      and a theme that is geared towards technical blogging
     image: https://example.com/images/astro-blog.png
     date: October 2022
     tools:
@@ -109,5 +112,5 @@ projects:
       - Markdown
       - Tailwind CSS
       - TypeScript
-    project-link: https://astroblog.example.com
-    github-link: https://github.com/tanayseven/astro-blog
+    project-link: https://blog.tanay.tech
+    github-link: https://github.com/tanayseven/blog.tanay.tech
