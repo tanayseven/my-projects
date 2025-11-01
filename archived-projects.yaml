@@ -1,49 +1,50 @@
 projects:
-  - name: Project Alpha
+  - name: Wordle Solver Bot
     description: >
-      A cutting-edge project focused on AI development.
-      Learn more at [Project Alpha](https://project-alpha.example.com).
-    image: https://example.com/images/project-alpha.png
+      An automated bot that solves Wordle puzzles using statistical analysis and word frequency algorithms.
+      See it in action at Wordle Solver.
+    image: https://example.com/images/wordle-solver.png
+    date: July 2022
     tools:
       - Python
-      - TensorFlow
-      - Docker
-    project-link: https://project-alpha.example.com
-    github-link: https://github.com/tanayseven/my-repo
-  - name: Project Beta
+      - Natural Language Processing
+      - Statistical Analysis
+    project-link: https://wordlesolver.example.com
+    github-link: https://github.com/tanayseven/wordle-solver
+  - name: Pong C++ DOS
     description: >
-      An innovative web application for task management.
-      Check it out at [Project Beta](https://project-beta.example.com).
-    image: https://example.com/images/project-beta.png
+      A recreation of the classic Pong game for DOS systems, written in C++ with retro graphics.
+      Download it at Pong C++ DOS.
+    image: https://example.com/images/pong-cpp-dos.png
+    date: May 2022
     tools:
-      - JavaScript
-      - React
-      - Node.js
-    project-link: https://project-beta.example.com
-    github-link: https://github.com/tanayseven/my-repo
-  - name: Project Gamma
+      - C++
+      - DOS
+      - Assembly
+    project-link: https://pongcppdos.example.com
+    github-link: https://github.com/tanayseven/pong-cpp-dos
+  - name: JTankWars
     description: >
-      A mobile app that revolutionizes fitness tracking.
-      Discover more at [Project Gamma](https://project-gamma.example.com).
+      A Java-based tank battle game with multiplayer capabilities and customizable maps.
+      Play it at JTankWars.
+    image: https://example.com/images/jtankwars.png
+    date: March 2022
     tools:
-      - Kotlin
-      - Firebase
-      - GraphQL
-    project-link: https://project-gamma.example.com
-  - name: Project Delta
+      - Java
+      - JavaFX
+      - Socket Programming
+    project-link: https://jtankwars.example.com
+    github-link: https://github.com/tanayseven/jtankwars
+  - name: Techyon 2013
     description: >
-      A blockchain-based solution for secure transactions.
-      Visit [Project Delta](https://project-delta.example.com) for details.
-      image: https://example.com/images/project-delta.png
-    github-link: https://github.com/tanayseven/my-repo
-  - name: Project Epsilon
-    description: >
-      A data visualization tool for big data analytics.
-      Explore [Project Epsilon](https://project-epsilon.example.com).
-    image: https://example.com/images/project-epsilon.png
+      A website for the Techyon 2013 technical festival, featuring event details and registration.
+      Archive available at Techyon 2013.
+    image: https://example.com/images/techyon-2013.png
+    date: September 2013
     tools:
-      - R
-      - Shiny
-      - D3.js
-    project-link: https://project-epsilon.example.com
-    github-link: https://github.com/tanayseven/my-repo
+      - PHP
+      - MySQL
+      - jQuery
+      - Bootstrap
+    project-link: https://techyon2013.example.com
+    github-link: https://github.com/tanayseven/techyon-2013

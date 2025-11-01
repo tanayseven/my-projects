@@ -11,6 +11,14 @@
     --footer-bg: #e9ecef;
     --border-radius: 8px;
     --transition: all 0.3s ease;
+    
+    /* Disabled state colors */
+    --disabled-bg-light: #4a4a4a;
+    --disabled-color-light: #999;
+    --disabled-border-light: #777;
+    --disabled-bg-dark: #2a2a2a;
+    --disabled-color-dark: #777;
+    --disabled-border-dark: #555;
 }
 
 /* Dark mode variables */
@@ -120,6 +128,8 @@ main {
     overflow: hidden;
     box-shadow: var(--card-shadow);
     transition: var(--transition);
+    display: flex;
+    flex-direction: column;
 }
 
 .project-card:hover {
@@ -143,7 +153,7 @@ main {
     background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
 }
 
 .project-title {
@@ -156,10 +166,13 @@ main {
 .project-date {
     color: rgba(255, 255, 255, 0.8);
     font-size: 0.875rem;
+    display: flex;
+    align-items: center;
 }
 
 .card-content {
     padding: 1.5rem;
+    flex-grow: 1;
 }
 
 .project-description {
@@ -182,24 +195,69 @@ main {
     font-size: 0.75rem;
 }
 
-.card-links {
-    display: flex;
-    gap: 1rem;
+.card-button-section {
+    width: 100%;
+    margin-top: auto;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.dark-mode .card-button-section {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-links {
+    display: flex;
+    width: 100%;
+}
+
+/* Card link styles */
 .card-link {
     display: inline-block;
     padding: 0.5rem 1rem;
     background-color: var(--secondary-color);
     color: white;
     text-decoration: none;
-    border-radius: var(--border-radius);
     font-size: 0.875rem;
     transition: var(--transition);
+    text-align: center;
+    flex: 1;
 }
 
-.card-link:hover {
+/* Card link hover state - only applies to non-disabled links */
+.card-link:not(.disabled):hover {
     background-color: var(--primary-color);
+}
+
+/* Disabled card link styles - using higher specificity selectors */
+.card-links .card-link.disabled {
+    background-color: var(--disabled-bg-light);
+    color: var(--disabled-color-light);
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    text-decoration: line-through;
+    border: 1px dashed var(--disabled-border-light);
+}
+
+/* Dark mode disabled card link styles */
+.dark-mode .card-links .card-link.disabled {
+    background-color: var(--disabled-bg-dark);
+    color: var(--disabled-color-dark);
+    border: 1px dashed var(--disabled-border-dark);
+}
+
+/* These styles need to come after the disabled styles to ensure proper cascade */
+.card-link-left {
+    border-bottom-left-radius: var(--border-radius);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.card-link-right {
+    border-bottom-right-radius: var(--border-radius);
 }
 
 /* Footer styles */

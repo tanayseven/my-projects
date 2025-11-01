@@ -1,52 +1,115 @@
 projects:
-  - name: Project Alpha
+  - name: My Projects Website
     description: >
-      A cutting-edge project focused on AI development.
-      Learn more at [Project Alpha](https://project-alpha.example.com).
-    image: https://example.com/images/project-alpha.png
-    date: October 2022
+      A personal portfolio website showcasing various projects and skills.
+      Explore my work at My Projects Website.
+    image: https://example.com/images/my-projects-website.png
+    date: November 2023
     tools:
-      - Python
-      - TensorFlow
-      - Docker
-    project-link: https://project-alpha.example.com
-    github-link: https://github.com/tanayseven/my-repo
-  - name: Project Beta
-    description: >
-      An innovative web application for task management.
-      Check it out at [Project Beta](https://project-beta.example.com).
-    image: https://example.com/images/project-beta.png
-    tools:
+      - HTML
+      - CSS
       - JavaScript
       - React
-      - Node.js
-    project-link: https://project-beta.example.com
-    github-link: https://github.com/tanayseven/my-repo
-  - name: Project Gamma
+    project-link: https://myprojects.example.com
+    github-link: https://github.com/tanayseven/my-projects-website
+  - name: Landing Page RetroOS
     description: >
-      A mobile app that revolutionizes fitness tracking.
-      Discover more at [Project Gamma](https://project-gamma.example.com).
-    date: October 2022
+      A retro-styled operating system interface landing page with nostalgic design elements.
+      Check it out at RetroOS.
+    image: https://example.com/images/retroos.png
+    date: August 2023
     tools:
-      - Kotlin
+      - HTML
+      - CSS
+      - JavaScript
+      - SVG
+    project-link: https://retroos.example.com
+    github-link: https://github.com/tanayseven/retroos
+  - name: ImpressJS Slide Numbering
+    description: >
+      A plugin for ImpressJS that adds slide numbering functionality to presentations.
+      Enhance your presentations at ImpressJS Slide Numbering.
+    image: https://example.com/images/impressjs-slide-numbering.png
+    date: June 2023
+    tools:
+      - JavaScript
+      - ImpressJS
+      - CSS
+    project-link: https://impressjs-slide-numbering.example.com
+    github-link: https://github.com/tanayseven/impressjs-slide-numbering
+  - name: Game of Life Implementations
+    description: >
+      Multiple implementations of Conway's Game of Life in different programming languages.
+      Explore the simulations at Game of Life.
+    image: https://example.com/images/game-of-life.png
+    date: April 2023
+    tools:
+      - JavaScript
+      - Python
+      - Rust
+      - Canvas
+    project-link: https://game-of-life.example.com
+    github-link: https://github.com/tanayseven/game-of-life
+  - name: Free Mind
+    description: >
+      A mindfulness and meditation application to help users reduce stress and improve focus.
+      Find your peace at Free Mind.
+    image: https://example.com/images/free-mind.png
+    date: March 2023
+    tools:
+      - React Native
       - Firebase
-      - GraphQL
-    project-link: https://project-gamma.example.com
-  - name: Project Delta
+      - Node.js
+    project-link: https://freemind.example.com
+    github-link: https://github.com/tanayseven/free-mind
+  - name: Libre Game Floor
     description: >
-      A blockchain-based solution for secure transactions.
-      Visit [Project Delta](https://project-delta.example.com) for details.
-    image: https://example.com/images/project-delta.png
-    date: October 2022
-    github-link: https://github.com/tanayseven/my-repo
-  - name: Project Epsilon
-    description: >
-      A data visualization tool for big data analytics.
-      Explore [Project Epsilon](https://project-epsilon.example.com).
-    image: https://example.com/images/project-epsilon.png
+      An open-source platform for creating and sharing browser-based games.
+      Join the community at Libre Game Floor.
+    image: https://example.com/images/libre-game-floor.png
+    date: February 2023
     tools:
-      - R
-      - Shiny
-      - D3.js
-    project-link: https://project-epsilon.example.com
-    github-link: https://github.com/tanayseven/my-repo
+      - JavaScript
+      - WebGL
+      - Node.js
+      - MongoDB
+    project-link: https://libregamefloor.example.com
+    github-link: https://github.com/tanayseven/libre-game-floor
+  - name: Left Unlocked
+    description: >
+      A cybersecurity awareness game teaching users about common security vulnerabilities.
+      Test your security knowledge at Left Unlocked.
+    image: https://example.com/images/left-unlocked.png
+    date: January 2023
+    tools:
+      - Unity
+      - C#
+      - WebGL
+    project-link: https://leftunlocked.example.com
+    github-link: https://github.com/tanayseven/left-unlocked
+  - name: X Mas Greeting Card
+    description: >
+      An interactive digital Christmas greeting card with animations and personalization options.
+      Spread holiday cheer at X Mas Card.
+    image: https://example.com/images/xmas-card.png
+    date: December 2022
+    tools:
+      - HTML
+      - CSS
+      - JavaScript
+      - SVG Animations
+    project-link: https://xmascard.example.com
+    github-link: https://github.com/tanayseven/xmas-card
+  - name: Astro Blog
+    description: >
+      A fast, modern blog built with Astro framework featuring markdown support and optimized performance.
+      Read articles at Astro Blog.
+    image: https://example.com/images/astro-blog.png
+    date: October 2022
+    tools:
+      - Astro
+      - Markdown
+      - Tailwind CSS
+      - TypeScript
+    project-link: https://astroblog.example.com
+    github-link: https://github.com/tanayseven/astro-blog

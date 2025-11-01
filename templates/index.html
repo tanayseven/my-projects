@@ -45,13 +45,19 @@
                             <span class="tech-chip">{{ tool }}</span>
                             {%- endfor %}
                         </div>
+                    </div>
+                    <div class="card-button-section">
                         <div class="card-links">
-                            {% if current_projects.project_link %}
-                            <a href="{{ project.project_link }}" class="card-link" target="_blank">Check it out</a>
-                            {% endif %}
-                            {% if project.github_link %}
-                            <a href="{{ project.github_link }}" class="card-link" target="_blank">GitHub</a>
-                            {% endif %}
+                            <a href="{{ project.project_link if project.project_link else 'javascript:void(0)' }}"
+                               class="card-link card-link-left {% if not project.project_link %}disabled{% endif %}"
+                               {% if project.project_link %}target="_blank"{% endif %}>
+                               Check it out
+                            </a>
+                            <a href="{{ project.github_link if project.github_link else 'javascript:void(0)' }}"
+                               class="card-link card-link-right {% if not project.github_link %}disabled{% endif %}"
+                               {% if project.github_link %}target="_blank"{% endif %}>
+                               GitHub
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -85,13 +91,19 @@
                             <span class="tech-chip">{{ tool }}</span>
                             {%- endfor %}
                         </div>
+                    </div>
+                    <div class="card-button-section">
                         <div class="card-links">
-                            {% if current_projects.project_link %}
-                            <a href="{{ project.project_link }}" class="card-link" target="_blank">Check it out</a>
-                            {% endif %}
-                            {% if project.github_link %}
-                            <a href="{{ project.github_link }}" class="card-link" target="_blank">GitHub</a>
-                            {% endif %}
+                            <a href="{{ project.project_link if project.project_link else 'javascript:void(0)' }}"
+                               class="card-link card-link-left {% if not project.project_link %}disabled{% endif %}"
+                               {% if project.project_link %}target="_blank"{% endif %}>
+                               Check it out
+                            </a>
+                            <a href="{{ project.github_link if project.github_link else 'javascript:void(0)' }}"
+                               class="card-link card-link-right {% if not project.github_link %}disabled{% endif %}"
+                               {% if project.github_link %}target="_blank"{% endif %}>
+                               GitHub
+                            </a>
                         </div>
                     </div>
                 </div>
