@@ -15,7 +15,8 @@ from models import Projects
 
 app = typer.Typer(help="CLI for managing projects")
 
-DEFAULT_YAML_PATH = Path("projects.yaml")
+current_projects_yaml_config = Path("projects.yaml")
+archived_projects_yaml_path = Path("archived-projects.yaml")
 BUILD_DIR = "build"
 
 flask_app = Flask(__name__, template_folder="templates")
@@ -42,7 +43,7 @@ def display_projects(projects: Projects) -> None:
 @app.command(help="Validate the project's YAML file")
 def validate(
     yaml_path: Path = typer.Argument(
-        DEFAULT_YAML_PATH,
+        current_projects_yaml_config,
         help="Path to the YAML file containing project data"
     )
 ) -> None:
@@ -93,7 +94,7 @@ def find_available_port(preferred_ports):
 @app.command(help="Serve a live preview of the projects and watch for changes")
 def serve(
     yaml_path: Path = typer.Argument(
-        DEFAULT_YAML_PATH,
+        current_projects_yaml_config,
         help="Path to the YAML file containing project data"
     )
 ) -> None:
@@ -147,24 +148,28 @@ def serve(
 
 @flask_app.route('/')
 def index():
-    yaml_path = flask_app.config.get('YAML_PATH', DEFAULT_YAML_PATH)
-    projects = Projects.load(yaml_path)
-    return render_template('index.html', projects=projects.projects)
+    current_projects = Projects.load(current_projects_yaml_config)
+    archived_projects = Projects.load(archived_projects_yaml_path)
+    return render_template(
+        'index.html',
+        current_projects=current_projects.projects,
+        archived_projects=archived_projects.projects,
+    )
 
 
-@flask_app.route('/project/<int:project_id>')
-def project_detail(project_id):
-    yaml_path = flask_app.config.get('YAML_PATH', DEFAULT_YAML_PATH)
-    projects = Projects.load(yaml_path)
-    if 0 <= project_id < len(projects.projects):
-        return render_template('project.html', project=projects.projects[project_id])
-    return "Project not found", 404
+# @flask_app.route('/project/<int:project_id>')
+# def project_detail(project_id):
+#     yaml_path = flask_app.config.get('YAML_PATH', DEFAULT_YAML_PATH)
+#     projects = Projects.load(yaml_path)
+#     if 0 <= project_id < len(projects.projects):
+#         return render_template('project.html', project=projects.projects[project_id])
+#     return "Project not found", 404
 
 
 @app.command()
 def build(
     yaml_path: Path = typer.Argument(
-        DEFAULT_YAML_PATH,
+        current_projects_yaml_config,
         help="Path to the YAML file containing project data"
     ),
     output_dir: Path = typer.Option(

@@ -4,7 +4,6 @@ projects:
       A cutting-edge project focused on AI development.
       Learn more at [Project Alpha](https://project-alpha.example.com).
     image: https://example.com/images/project-alpha.png
-    date: October 2022
     tools:
       - Python
       - TensorFlow
@@ -26,7 +25,6 @@ projects:
     description: >
       A mobile app that revolutionizes fitness tracking.
       Discover more at [Project Gamma](https://project-gamma.example.com).
-    date: October 2022
     tools:
       - Kotlin
       - Firebase
@@ -36,8 +34,7 @@ projects:
     description: >
       A blockchain-based solution for secure transactions.
       Visit [Project Delta](https://project-delta.example.com) for details.
-    image: https://example.com/images/project-delta.png
-    date: October 2022
+      image: https://example.com/images/project-delta.png
     github-link: https://github.com/tanayseven/my-repo
   - name: Project Epsilon
     description: >

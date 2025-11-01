@@ -5,10 +5,12 @@ import yaml
 
 class Project(BaseModel):
     name: str
+    date: str | None = None
     description: str
-    tools: Optional[List[str]] = None
-    project_link: Optional[str] = Field(None, alias="project-link")
-    github_link: Optional[str] = Field(None, alias="github-link")
+    tools: List[str] = []
+    project_link: str | None = Field(None, alias="project-link")
+    github_link: str | None = Field(None, alias="github-link")
+    image: str | None = None
 
     class Config:
         populate_by_name = True
