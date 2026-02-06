@@ -7,9 +7,9 @@ document.addEventListener('DOMContentLoaded', function() {
         body.classList.toggle('dark-mode');
         
         if (body.classList.contains('dark-mode')) {
-            themeToggleBtn.textContent = 'Light Mode';
+            themeToggleBtn.textContent = '☀️ Light Mode';
         } else {
-            themeToggleBtn.textContent = 'Dark Mode';
+            themeToggleBtn.textContent = '🌙 Dark Mode';
         }
     });
 });

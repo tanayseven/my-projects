@@ -1,0 +1,136 @@
+tools:
+  - id: html
+    name: HTML
+    icon: html5.svg
+    color: "#fbb0bf"
+    icon-color: "#e34c26"
+  - id: css
+    name: CSS
+    icon: css.svg
+    color: "#3a6179"
+    icon-color: "#264de4"
+  - id: javascript
+    name: JavaScript
+    icon: javascript.svg
+    color: "#e59cab"
+    icon-color: "#f7df1e"
+  - id: python
+    name: Python
+    icon: python.svg
+    color: "#3776ab"
+    icon-color: "#4b8bbe"
+  - id: frozen-flask
+    name: Frozen-Flask
+    icon: frozen-flask.svg
+    color: "#000000"
+    icon-color: "#87cefa"
+  - id: svg
+    name: SVG
+    icon: svg.svg
+    color: "#ffb13b"
+    icon-color: "#ff9900"
+  - id: impressjs
+    name: ImpressJS
+    icon: impressjs.svg
+    color: "#f05033"
+    icon-color: "#e74c3c"
+  - id: rust
+    name: Rust
+    icon: rust.svg
+    color: "#000000"
+    icon-color: "#b7410e"
+  - id: canvas
+    name: Canvas
+    icon: canvas.svg
+    color: "#4285f4"
+    icon-color: "#34a853"
+  - id: svelte
+    name: Svelte
+    icon: svelte.svg
+    color: "#ff3e00"
+    icon-color: "#ff3e00"
+  - id: go
+    name: Go
+    icon: go.svg
+    color: "#00add8"
+    icon-color: "#29beb0"
+  - id: wails
+    name: Wails
+    icon: wails.svg
+    color: "#ff4757"
+    icon-color: "#ff6b81"
+  - id: linux
+    name: Linux
+    icon: linux.svg
+    color: "#333333"
+    icon-color: "#ffd133"
+  - id: windows
+    name: Windows
+    icon: windows.svg
+    color: "#0078d6"
+    icon-color: "#00adef"
+  - id: macos
+    name: macOS
+    icon: macos.svg
+    color: "#999999"
+    icon-color: "#7d7d7d"
+  - id: ebitengine
+    name: Ebitengine
+    icon: ebitengine.png
+    color: "#00a8e8"
+    icon-color: "#00c6ff"
+  - id: android
+    name: Android
+    icon: android.svg
+    color: "#3ddc84"
+    icon-color: "#a4c639"
+  - id: ios
+    name: iOS
+    icon: ios.svg
+    color: "#007aff"
+    icon-color: "#5fc9f8"
+  - id: browser
+    name: Browser
+    icon: browser.svg
+    color: "#4285f4"
+    icon-color: "#ea4335"
+  - id: unity
+    name: Unity
+    icon: unity.svg
+    color: "#000000"
+    icon-color: "#ffffff"
+  - id: csharp
+    name: C#
+    icon: csharp.svg
+    color: "#239120"
+    icon-color: "#68217a"
+  - id: webgl
+    name: WebGL
+    icon: webgl.svg
+    color: "#990000"
+    icon-color: "#cc0000"
+  - id: svg-animations
+    name: SVG Animations
+    icon: svg-animations.svg
+    color: "#ff9900"
+    icon-color: "#ffcc00"
+  - id: astro
+    name: Astro
+    icon: astro.svg
+    color: "#ff5d01"
+    icon-color: "#ff5d01"
+  - id: markdown
+    name: Markdown
+    icon: markdown.svg
+    color: "#000000"
+    icon-color: "#ffffff"
+  - id: tailwind-css
+    name: Tailwind CSS
+    icon: tailwindcss.svg
+    color: "#06b6d4"
+    icon-color: "#38bdf8"
+  - id: typescript
+    name: TypeScript
+    icon: typescript.svg
+    color: "#3178c6"
+    icon-color: "#007acc"

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tanay's Projects</title>
-    <link rel="stylesheet" href="../static/css/styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body class="dark-mode">
     <header>
@@ -12,14 +12,14 @@
             <h1>Tanay's Projects</h1>
             <p class="subtitle">Hi, I'm Tanay. This is the showcase of some of my creative endevours that I've indulged in</p>
             <div class="theme-toggle">
-                <button id="theme-toggle-btn">Light Mode</button>
+                <button id="theme-toggle-btn">☀️ Light Mode</button>
             </div>
         </div>
     </header>
 
     <main class="container">
         <section class="projects-section">
-            <h2>Currently in development</h2>
+            <h2>Currently, in development</h2>
             <div class="projects-grid">
                 <!-- Project Card 1 -->
                 {% for project in current_projects %}
@@ -42,7 +42,10 @@
                         <p class="project-description">{{ project.description }}</p>
                         <div class="project-tech">
                             {% for tool in project.tools -%}
-                            <span class="tech-chip">{{ tool }}</span>
+                            <span class="tech-chip" style="background-color: {{ tool.color }}">
+                                <img src="{{ url_for('static', filename='icons/' + tool.icon) }}" alt="{{ tool.name }}" class="tool-icon" {% if tool.icon_color %}style="filter: drop-shadow(0 0 1px {{ tool.icon_color }})"{% endif %}>
+                                {{ tool.name }}
+                            </span>
                             {%- endfor %}
                         </div>
                     </div>
@@ -90,7 +93,10 @@
                         <p class="project-description">{{ project.description }}</p>
                         <div class="project-tech">
                             {% for tool in project.tools -%}
-                            <span class="tech-chip">{{ tool }}</span>
+                            <span class="tech-chip" style="background-color: {{ tool.color }}">
+                                <img src="{{ url_for('static', filename='icons/' + tool.icon) }}" alt="{{ tool.name }}" class="tool-icon" {% if tool.icon_color %}style="filter: drop-shadow(0 0 1px {{ tool.icon_color }})"{% endif %}>
+                                {{ tool.name }}
+                            </span>
                             {%- endfor %}
                         </div>
                     </div>
@@ -122,7 +128,7 @@
         </div>
     </footer>
 
-    <script src="../static/js/projects.js"></script>
-    <script src="../static/js/main.js"></script>
+    <script src="{{ url_for('static', filename='js/projects.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 </html>

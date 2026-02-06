@@ -1,15 +1,14 @@
 # Projects list to add
-- [ ] Wordle Solver Bot - Archived
-- [ ] My Projects Website - Ongoign
+- [x] Wordle Solver Bot - Archived
+- [ ] My Projects Website - Ongoing
 - [ ] Landing Page RetroOS - Ongoing
-- [ ] Pong C++ DOS - Archived
-- [ ] JTankWars - Archived
+- [x] Pong C++ DOS - Archived
+- [x] JTankWars - Archived
 - [ ] ImpressJS Slide Numbering - Ongoing
-- [ ] Techyon 2013 - Archived
-- [ ] Game of Life Implementations - Ongiong
+- [x] Techyon 2013 - Archived
+- [ ] Game of Life Implementations - Ongoing
 - [ ] Free Mind - Ongoing
 - [ ] Libre Game Floor - Ongoing
 - [ ] Left Unlocked - Ongoing
-- [ ] Wordle Solver Bot - Archived
 - [ ] X Mas Greeting Card - Ongoing
 - [ ] Astro Blog - Ongoing
