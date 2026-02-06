@@ -60,27 +60,24 @@ my-projects/
 
 ### Usage
 
-#### Validate YAML Files
+You can run the commands using either the CLI directly or using the configured scripts.
+
+#### Using Scripts
 
 ```bash
-python cli.py validate
+# Validate YAML Files
+uv run python -m cli validate
+
+# Serve a Live Preview
+uv run python -m cli serve
+
+# Build Static Site
+uv run python -m cli build
 ```
 
-#### Serve a Live Preview
+The serve command will start a local development server, typically at http://127.0.0.1:3000, and watch for changes to your YAML files.
 
-```bash
-python cli.py serve
-```
-
-This will start a local development server, typically at http://127.0.0.1:3000, and watch for changes to your YAML files.
-
-#### Build Static Site
-
-```bash
-python cli.py build
-```
-
-This will generate a static site in the `build` directory that can be deployed to any web hosting service.
+The build command will generate a static site in the `build` directory that can be deployed to any web hosting service.
 
 ## Adding Projects
 
