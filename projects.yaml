@@ -12,6 +12,8 @@ projects:
       - frozen-flask
     github-link: https://github.com/tanayseven/my-projects
     project-link: https://projects.tanay.tech
+
+
   - name: Landing Page RetroOS
     description: >
       A retro-styled operating system interface landing page with nostalgic retro terminal that
@@ -25,6 +27,8 @@ projects:
       - svg
     github-link: https://github.com/tanayseven/tanayseven.github.io
     project-link: https://tanay.tech/
+
+
   - name: ImpressJS Slide Numbering
     description: >
       A plugin for ImpressJS that adds slide numbering functionality to presentations.
@@ -37,6 +41,8 @@ projects:
       - html
     project-link: https://tanay.tech/ImpressJS-Slide-Numbering/
     github-link: https://github.com/tanayseven/ImpressJS-Slide-Numbering
+
+
   - name: Game of Life Implementations
     description: >
       Multiple implementations of Conway's Game of Life in different programming languages
@@ -47,6 +53,8 @@ projects:
       - rust
       - canvas
     github-link: https://github.com/tanayseven/game-of-life
+
+
   - name: Free Mind
     description: >
       A mindfulness and focusing application to help users  improve focus by blocking apps.
@@ -60,6 +68,8 @@ projects:
       - macos
     project-link: https://freemind.tanay.tech
     github-link: https://github.com/tanayseven/free-mind
+
+
   - name: Libre Game Floor
     description: >
       A free and open-source set of classic mini-games playable across multiple platforms.
@@ -76,6 +86,8 @@ projects:
       - linux
     project-link: https://libregamefloor.tanay.tech
     github-link: https://github.com/tanayseven/libre-game-floor
+
+
   - name: Left Unlocked
     description: >
       A prank and awareness webpage that shows a message for users who leave their devices
@@ -88,6 +100,8 @@ projects:
       - webgl
     project-link: https://leftunlocked.tanay.tech/
     github-link: https://github.com/tanayseven/left-unlocked
+
+
   - name: X Mas Greeting Card
     description: >
       An interactive digital Christmas greeting card with animations and personalization options.
@@ -101,6 +115,8 @@ projects:
       - svg-animations
     project-link: https://xmascard.example.com
     github-link: https://github.com/tanayseven/xmas-card
+
+
   - name: Astro Blog
     description: >
       A fast, modern blog built with Astro framework featuring markdown support and optimized performance

@@ -13,6 +13,8 @@ projects:
       - Puzzle Solving
     project-link: https://www.youtube.com/watch?v=gvoLCMiBv8o
     github-link: https://github.com/tanayseven/wordle-solver-bot
+
+
   - name: Pong C++ DOS
     description: >
       A recreation of the classic Pong game for DOS systems, written in C++ with retro graphics
@@ -22,6 +24,8 @@ projects:
       - Turbo C++
       - Assembly
     github-link: https://github.com/tanayseven/pong-archive
+
+
   - name: JTankWars
     description: >
       A Java-based tank battle game with multiple levels, AI opponents, and different levels.
@@ -31,6 +35,8 @@ projects:
       - Java
       - Java Swing
     github-link: https://github.com/tanayseven/j-tank-wars
+
+
   - name: Techyon 2013
     description: >
       A website for the Techyon 2013 technical festival at my college, featuring event details and registration forms
