@@ -2,6 +2,12 @@
 
 A personal portfolio website that showcases my various projects and creative endeavors. This application allows me to maintain and display both current and archived projects in an organized and visually appealing way.
 
+[![Python](https://img.shields.io/badge/Python-FFD43B?logo=python&logoColor=blue)](https://www.python.org/) <br>
+[![Python Version from PEP 621 TOML](https://img.shields.io/python/required-version-toml?tomlFilePath=https%3A%2F%2Fraw.githubusercontent.com%2Ftanayseven%2Fmy-projects%2Frefs%2Fheads%2Fmain%2Fpyproject.toml)](https://www.python.org/downloads/) <br>
+[![GitHub License](https://img.shields.io/github/license/tanayseven/my-projects)](https://github.com/tanayseven/my-projects/blob/main/LICENSE) <br>
+[![Python CI](https://github.com/tanayseven/my-projects/actions/workflows/py.yml/badge.svg)](https://github.com/tanayseven/my-projects/actions/workflows/py.yml) <br>
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Fprojects.tanay.tech&up_message=online&down_message=offline)](https://projects.tanay.tech) <br>
+
 ## About
 
 This project is a static site generator that creates a portfolio website from project data stored in YAML files. It uses Python with Flask and Frozen-Flask to generate a static website that can be easily deployed to any web hosting service. The website features a responsive design with both light and dark mode options.
@@ -28,7 +34,6 @@ my-projects/
 ├── projects.yaml           # YAML file for current projects
 ├── pyproject.toml          # Python project configuration
 ├── README.md               # Project documentation
-├── TODO.md                 # Project todo list
 └── uv.lock                 # Dependency lock file
 ```
 

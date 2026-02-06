@@ -3,12 +3,12 @@ name = "my-projects"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = "==3.13.*"
 dependencies = [
-    "frozen-flask>=1.0.2",
-    "pydantic>=2.11.9",
-    "pyyaml>=6.0.3",
-    "ruff>=0.15.0",
-    "typer>=0.19.2",
-    "watchdog>=6.0.0",
+    "frozen-flask==1.0.2",
+    "pydantic==2.11.9",
+    "pyyaml==6.0.3",
+    "ruff==0.15.0",
+    "typer==0.19.2",
+    "watchdog==6.0.0",
 ]
