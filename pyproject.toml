@@ -9,6 +9,6 @@ dependencies = [
     "pydantic==2.13.3",
     "pyyaml==6.0.3",
     "ruff==0.15.12",
-    "typer==0.25.0",
+    "typer==0.25.1",
     "watchdog==6.0.0",
 ]
