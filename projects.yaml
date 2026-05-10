@@ -50,8 +50,6 @@ projects:
     tools:
       - javascript
       - python
-      - rust
-      - canvas
     github-link: https://github.com/tanayseven/game-of-life
 
 
@@ -70,7 +68,7 @@ projects:
     github-link: https://github.com/tanayseven/free-mind
 
 
-  - name: Libre Game Floor
+  - name: Play Nivo
     description: >
       A free and open-source set of classic mini-games playable across multiple platforms.
     image: https://example.com/images/libre-game-floor.png
@@ -84,8 +82,8 @@ projects:
       - windows
       - macos
       - linux
-    project-link: https://libregamefloor.tanay.tech
-    github-link: https://github.com/tanayseven/libre-game-floor
+#    project-link: https://playnivo.tanay.tech
+#    github-link: https://github.com/tanayseven/playnivo
 
 
   - name: Left Unlocked
@@ -95,9 +93,9 @@ projects:
     image: https://example.com/images/left-unlocked.png
     date: January 2023
     tools:
-      - unity
-      - csharp
-      - webgl
+      - html
+      - js
+      - css
     project-link: https://leftunlocked.tanay.tech/
     github-link: https://github.com/tanayseven/left-unlocked
 
@@ -112,7 +110,7 @@ projects:
       - html
       - css
       - javascript
-      - svg-animations
+      - kaplayjs
     project-link: https://xmascard.example.com
     github-link: https://github.com/tanayseven/xmas-card
 
