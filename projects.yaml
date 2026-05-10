@@ -24,7 +24,6 @@ projects:
       - html
       - css
       - javascript
-      - svg
     github-link: https://github.com/tanayseven/tanayseven.github.io
     project-link: https://tanay.tech/
 
@@ -61,6 +60,7 @@ projects:
       - svelte
       - go
       - wails
+      - capacitor
       - linux
       - windows
       - macos
@@ -75,7 +75,8 @@ projects:
     date: September 2025
     tools:
       - go
-      - ebitengine
+      - svelte
+      - pixijs
       - android
       - ios
       - browser
