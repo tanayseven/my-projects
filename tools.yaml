@@ -27,7 +27,7 @@ tools:
   - id: svg
     name: SVG
     icon: svg.svg
-    color: "#ffb13b"
+    color: "#1f2937"
     icon-color: "#ff9900"
   - id: impressjs
     name: ImpressJS
@@ -52,7 +52,7 @@ tools:
   - id: go
     name: Go
     icon: go.svg
-    color: "#00add8"
+    color: "#1f2937"
     icon-color: "#29beb0"
   - id: wails
     name: Wails
@@ -67,7 +67,7 @@ tools:
   - id: windows
     name: Windows
     icon: windows.svg
-    color: "#0078d6"
+    color: "#1f2937"
     icon-color: "#00adef"
   - id: macos
     name: macOS
@@ -82,7 +82,7 @@ tools:
   - id: android
     name: Android
     icon: android.svg
-    color: "#3ddc84"
+    color: "#1f2937"
     icon-color: "#a4c639"
   - id: ios
     name: iOS
@@ -107,7 +107,7 @@ tools:
   - id: webgl
     name: WebGL
     icon: webgl.svg
-    color: "#990000"
+    color: "#1f2937"
     icon-color: "#cc0000"
   - id: svg-animations
     name: SVG Animations
@@ -117,7 +117,7 @@ tools:
   - id: astro
     name: Astro
     icon: astro.svg
-    color: "#ff5d01"
+    color: "#1f2937"
     icon-color: "#ff5d01"
   - id: markdown
     name: Markdown
@@ -127,7 +127,7 @@ tools:
   - id: tailwind-css
     name: Tailwind CSS
     icon: tailwindcss.svg
-    color: "#06b6d4"
+    color: "#1f2937"
     icon-color: "#38bdf8"
   - id: typescript
     name: TypeScript
