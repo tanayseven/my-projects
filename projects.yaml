@@ -1,4 +1,101 @@
 projects:
+  - name: Shorts
+    description: >
+      A URL shortener and code-paste service with custom aliases, expiry, password protection
+      and per-link click analytics, built with FastAPI and HTMX.
+    date: August 2026
+    tools:
+      - python
+      - html
+      - css
+    github-link: https://github.com/tanayseven/shorts
+
+
+  - name: Tabletop Tavern
+    description: >
+      A collection of classic tabletop games playable in the browser and on the desktop,
+      all from one codebase, packaged for desktop with Tauri.
+    date: August 2026
+    tools:
+      - svelte
+      - typescript
+      - rust
+      - browser
+      - windows
+      - macos
+      - linux
+    project-link: https://tanayseven.itch.io/tabletop-tavern
+    github-link: https://github.com/tanayseven/tabletop-tavern
+
+
+  - name: Sabotage at T-Minus
+    description: >
+      A collaborative 2D game built with Bevy and Rapier physics, released for the web,
+      Linux, Windows and macOS.
+    date: July 2026
+    tools:
+      - rust
+      - browser
+      - windows
+      - macos
+      - linux
+    project-link: https://tanayseven.itch.io/sabotage-at-t-minus
+    github-link: https://github.com/tanayseven/sabotage-at-t-minus
+
+
+  - name: Tech Events Tracker
+    description: >
+      A tracker for upcoming tech conferences and events, scraped automatically and
+      published as a static website.
+    date: June 2026
+    tools:
+      - python
+      - html
+    project-link: https://techevents.tanay.tech
+    github-link: https://github.com/tanayseven/tech-events-tracker
+
+
+  - name: Subhashitani
+    description: >
+      A collection of Sanskrit shlokas, sayings and mottos with translations, written in Markdown
+      and built into a searchable static website.
+    date: May 2026
+    tools:
+      - python
+      - frozen-flask
+      - markdown
+      - html
+      - css
+    project-link: https://subhashitani.tanay.tech
+    github-link: https://github.com/tanayseven/subhashitani
+
+
+  - name: Pong Bevy
+    description: >
+      A classic two-player Pong game built with the Bevy game engine in Rust, playable in the browser.
+    date: August 2024
+    tools:
+      - rust
+      - browser
+    project-link: https://tanayseven.itch.io/pong-bevy
+    github-link: https://github.com/tanayseven/pong-bevy
+
+
+  - name: Breakout Ebitengine
+    description: >
+      A Breakout game made with Ebitengine in Go, available as desktop binaries and in the browser.
+    date: June 2024
+    tools:
+      - go
+      - ebitengine
+      - browser
+      - windows
+      - macos
+      - linux
+    project-link: https://tanayseven.itch.io/breakout-ebitengine
+    github-link: https://github.com/tanayseven/breakout-ebitengine
+
+
   - name: My Projects Website
     description: >
       A personal portfolio website showcasing various projects and skills.
