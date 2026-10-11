@@ -5,6 +5,7 @@ projects:
     date: September 2026
     tools:
       - linux
+      - bash
     github-link: https://github.com/tanayseven/home-migration
 
 
@@ -18,6 +19,9 @@ projects:
       - html
       - css
       - htmx
+      - fastapi
+      - sqlite
+      - docker
     github-link: https://github.com/tanayseven/shorts
 
 
@@ -63,6 +67,9 @@ projects:
     tools:
       - linux
       - podman
+      - docker
+      - bash
+      - minecraft
     github-link: https://github.com/tanayseven/better-minecraft-server
 
 
@@ -75,6 +82,8 @@ projects:
       - python
       - scrapy
       - html
+      - flask
+      - aws-s3
     project-link: https://techevents.tanay.tech
     github-link: https://github.com/tanayseven/tech-events-tracker
 
@@ -90,6 +99,7 @@ projects:
       - markdown
       - html
       - css
+      - aws-s3
     project-link: https://subhashitani.tanay.tech
     github-link: https://github.com/tanayseven/subhashitani
 
@@ -132,6 +142,7 @@ projects:
       - javascript
       - python
       - frozen-flask
+      - aws-s3
     github-link: https://github.com/tanayseven/my-projects
     project-link: https://projects.tanay.tech
 
@@ -217,7 +228,7 @@ projects:
     date: January 2023
     tools:
       - html
-      - js
+      - javascript
       - css
     project-link: https://leftunlocked.tanay.tech/
     github-link: https://github.com/tanayseven/left-unlocked

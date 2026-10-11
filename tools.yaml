@@ -164,3 +164,48 @@ tools:
     icon: kaplayjs.png
     color: "#4e187c"
     icon-color: "#abdd64"
+  - id: flask
+    name: Flask
+    icon: flask.svg
+    color: "#1f2937"
+    icon-color: "#3babc3"
+  - id: fastapi
+    name: FastAPI
+    icon: fastapi.svg
+    color: "#1f2937"
+    icon-color: "#009688"
+  - id: sqlite
+    name: SQLite
+    icon: sqlite.svg
+    color: "#1f2937"
+    icon-color: "#0f80cc"
+  - id: docker
+    name: Docker
+    icon: docker.svg
+    color: "#1f2937"
+    icon-color: "#1d63ed"
+  - id: bash
+    name: Bash
+    icon: bash.svg
+    color: "#4eaa25"
+    icon-color: "#293138"
+  - id: minecraft
+    name: Minecraft
+    icon: minecraft.png
+    color: "#1f2937"
+    icon-color: "#62b47a"
+  - id: aws-s3
+    name: Amazon S3
+    icon: aws-s3.svg
+    color: "#232f3e"
+    icon-color: "#7aa116"
+  - id: pixijs
+    name: PixiJS
+    icon: pixijs.svg
+    color: "#1f2937"
+    icon-color: "#e72264"
+  - id: capacitor
+    name: Capacitor
+    icon: capacitor.png
+    color: "#1f2937"
+    icon-color: "#119eff"
