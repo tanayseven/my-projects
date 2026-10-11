@@ -1,4 +1,13 @@
 projects:
+  - name: Home Migration
+    description: >
+      A set of scripts to back up and restore home directories when moving between machines.
+    date: September 2026
+    tools:
+      - linux
+    github-link: https://github.com/tanayseven/home-migration
+
+
   - name: Shorts
     description: >
       A URL shortener and code-paste service with custom aliases, expiry, password protection
@@ -41,6 +50,16 @@ projects:
       - linux
     project-link: https://tanayseven.itch.io/sabotage-at-t-minus
     github-link: https://github.com/tanayseven/sabotage-at-t-minus
+
+
+  - name: Better Minecraft Server
+    description: >
+      A containerised dedicated server for the Better MC (NeoForge) modpack, with a script to fetch
+      the matching server pack and a compose file to run it with Podman.
+    date: July 2026
+    tools:
+      - linux
+    github-link: https://github.com/tanayseven/better-minecraft-server
 
 
   - name: Tech Events Tracker
@@ -113,15 +132,15 @@ projects:
 
   - name: Landing Page RetroOS
     description: >
-      A retro-styled operating system interface landing page with nostalgic retro terminal that
-      feels and looks like an old-school OS.
+      A retro-styled operating system interface landing page with a CRT screen and a nostalgic
+      retro terminal that feels and looks like an old-school OS.
       Experience the nostalgia at RetroOS Landing Page
     date: August 2023
     tools:
       - html
       - css
-      - javascript
-    github-link: https://github.com/tanayseven/tanayseven.github.io
+      - typescript
+    github-link: https://github.com/tanayseven/crt-screen-home-page
     project-link: https://tanay.tech/
 
 
