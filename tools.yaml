@@ -144,3 +144,8 @@ tools:
     icon: podman.svg
     color: "#892ca0"
     icon-color: "#60605b"
+  - id: bevy
+    name: Bevy
+    icon: bevy.svg
+    color: "#232326"
+    icon-color: "#ececec"

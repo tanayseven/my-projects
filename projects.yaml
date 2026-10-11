@@ -45,6 +45,7 @@ projects:
     date: July 2026
     tools:
       - rust
+      - bevy
       - browser
       - windows
       - macos
@@ -97,6 +98,7 @@ projects:
     date: August 2024
     tools:
       - rust
+      - bevy
       - browser
     project-link: https://tanayseven.itch.io/pong-bevy
     github-link: https://github.com/tanayseven/pong-bevy
