@@ -191,14 +191,14 @@ tools:
     icon-color: "#293138"
   - id: minecraft
     name: Minecraft
-    icon: minecraft.png
+    icon: minecraft.svg
     color: "#1f2937"
     icon-color: "#62b47a"
   - id: aws-s3
     name: Amazon S3
     icon: aws-s3.svg
     color: "#232f3e"
-    icon-color: "#7aa116"
+    icon-color: "#e05243"
   - id: pixijs
     name: PixiJS
     icon: pixijs.svg
@@ -206,6 +206,6 @@ tools:
     icon-color: "#e72264"
   - id: capacitor
     name: Capacitor
-    icon: capacitor.png
+    icon: capacitor.svg
     color: "#1f2937"
     icon-color: "#119eff"
