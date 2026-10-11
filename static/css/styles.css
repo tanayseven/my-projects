@@ -59,7 +59,7 @@ body {
 /* Header styles */
 header {
     background-color: var(--header-bg);
-    padding: 2rem 0;
+    padding: 3.5rem 0 2rem;
     position: relative;
     transition: var(--transition);
 }
@@ -68,6 +68,15 @@ header h1 {
     font-size: 2rem;
     margin-bottom: 0.5rem;
     color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+}
+
+.title-icon {
+    width: 1.2em;
+    height: 1.2em;
+    flex: none;
 }
 
 .subtitle {
@@ -314,6 +323,10 @@ footer p {
 
 /* Media queries for responsive design */
 @media (min-width: 768px) {
+    header {
+        padding: 2rem 0;
+    }
+
     header h1 {
         font-size: 2.5rem;
     }
