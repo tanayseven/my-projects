@@ -17,6 +17,7 @@ projects:
       - python
       - html
       - css
+      - htmx
     github-link: https://github.com/tanayseven/shorts
 
 
@@ -59,6 +60,7 @@ projects:
     date: July 2026
     tools:
       - linux
+      - podman
     github-link: https://github.com/tanayseven/better-minecraft-server
 
 

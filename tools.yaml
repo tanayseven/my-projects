@@ -134,3 +134,13 @@ tools:
     icon: typescript.svg
     color: "#3178c6"
     icon-color: "#007acc"
+  - id: htmx
+    name: HTMX
+    icon: htmx.svg
+    color: "#333333"
+    icon-color: "#3d72d7"
+  - id: podman
+    name: Podman
+    icon: podman.svg
+    color: "#892ca0"
+    icon-color: "#60605b"
