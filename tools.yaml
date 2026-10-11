@@ -149,3 +149,18 @@ tools:
     icon: bevy.svg
     color: "#232326"
     icon-color: "#ececec"
+  - id: tauri
+    name: Tauri
+    icon: tauri.svg
+    color: "#24c8db"
+    icon-color: "#ffc131"
+  - id: scrapy
+    name: Scrapy
+    icon: scrapy.svg
+    color: "#1f2937"
+    icon-color: "#15b8a6"
+  - id: kaplayjs
+    name: KAPLAY
+    icon: kaplayjs.png
+    color: "#4e187c"
+    icon-color: "#abdd64"

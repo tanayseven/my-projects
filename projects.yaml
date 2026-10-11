@@ -30,6 +30,7 @@ projects:
       - svelte
       - typescript
       - rust
+      - tauri
       - browser
       - windows
       - macos
@@ -72,6 +73,7 @@ projects:
     date: June 2026
     tools:
       - python
+      - scrapy
       - html
     project-link: https://techevents.tanay.tech
     github-link: https://github.com/tanayseven/tech-events-tracker
