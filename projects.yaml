@@ -104,6 +104,110 @@ projects:
     github-link: https://github.com/tanayseven/subhashitani
 
 
+  - name: AoC Leaderboard
+    description: >
+      A small script that calls the Advent of Code API and generates an ASCII leaderboard.
+    date: November 2025
+    tools:
+      - python
+    github-link: https://github.com/tanayseven/aoc-leaderboard
+
+
+  - name: Free Mind
+    description: >
+      A desktop focus app being rebuilt on Tauri and Rust, with focus timers today and
+      website blocking planned. It runs entirely offline and collects no data.
+    date: September 2025
+    tools:
+      - svelte
+      - typescript
+      - tailwind-css
+      - rust
+      - tauri
+      - linux
+      - windows
+      - macos
+    github-link: https://github.com/tanayseven/free-mind
+
+
+  - name: My Projects Website
+    description: >
+      A personal portfolio website showcasing various projects and skills.
+      Explore my work at My Projects Website
+    date: September 2025
+    tools:
+      - html
+      - css
+      - javascript
+      - python
+      - frozen-flask
+      - aws-s3
+    github-link: https://github.com/tanayseven/my-projects
+    project-link: https://projects.tanay.tech
+
+
+  - name: X Mas Greeting Card
+    description: >
+      An interactive digital Christmas greeting card, played as a small game, that can be
+      personalised with the sender's and recipient's names.
+    date: December 2024
+    tools:
+      - typescript
+      - html
+      - kaplayjs
+      - aws-s3
+    project-link: https://wishxmas.tanay.tech
+    github-link: https://github.com/tanayseven/x-mas-greeting
+
+
+  - name: Left Unlocked
+    description: >
+      A prank and awareness webpage that shows a message for users who leave their devices
+      unlocked in public places or at work places
+    date: December 2024
+    tools:
+      - html
+      - javascript
+      - css
+    project-link: https://leftunlocked.tanay.tech/
+    github-link: https://github.com/tanayseven/left-unlocked
+
+
+  - name: Astro Blog
+    description: >
+      A fast, modern blog built with Astro framework featuring markdown support and optimized performance
+      and a theme that is geared towards technical blogging
+    date: December 2024
+    tools:
+      - astro
+      - markdown
+      - tailwind-css
+      - typescript
+    project-link: https://blog.tanay.tech
+    github-link: https://github.com/tanayseven/blog.tanay.tech
+
+
+  - name: Diwali Celebration
+    description: >
+      An interactive Diwali night scene with fireworks over a city skyline, fairy lights and
+      positional sound, available in many Indian languages on the web, Android and the desktop.
+    date: October 2024
+    tools:
+      - typescript
+      - pixijs
+      - capacitor
+      - go
+      - wails
+      - aws-s3
+      - browser
+      - android
+      - windows
+      - macos
+      - linux
+    project-link: https://diwali.tanay.tech
+    github-link: https://github.com/tanayseven/diwali
+
+
   - name: Pong Bevy
     description: >
       A classic two-player Pong game built with the Bevy game engine in Rust, playable in the browser.
@@ -131,20 +235,19 @@ projects:
     github-link: https://github.com/tanayseven/breakout-ebitengine
 
 
-  - name: My Projects Website
+  - name: Pong Ebitengine
     description: >
-      A personal portfolio website showcasing various projects and skills.
-      Explore my work at My Projects Website
-    date: November 2023
+      A neon-styled Pong game made with Ebitengine in Go, available as desktop binaries and in the browser.
+    date: October 2023
     tools:
-      - html
-      - css
-      - javascript
-      - python
-      - frozen-flask
-      - aws-s3
-    github-link: https://github.com/tanayseven/my-projects
-    project-link: https://projects.tanay.tech
+      - go
+      - ebitengine
+      - browser
+      - windows
+      - macos
+      - linux
+    project-link: https://tanayseven.itch.io/pong-ebitengine
+    github-link: https://github.com/tanayseven/pong-ebitengine
 
 
   - name: Landing Page RetroOS
@@ -152,7 +255,7 @@ projects:
       A retro-styled operating system interface landing page with a CRT screen and a nostalgic
       retro terminal that feels and looks like an old-school OS.
       Experience the nostalgia at RetroOS Landing Page
-    date: August 2023
+    date: June 2021
     tools:
       - html
       - css
@@ -161,11 +264,21 @@ projects:
     project-link: https://tanay.tech/
 
 
+  - name: Game of Life Implementations
+    description: >
+      Multiple implementations of Conway's Game of Life in different programming languages
+    date: September 2017
+    tools:
+      - python
+      - go
+    github-link: https://github.com/tanayseven/game-of-life
+
+
   - name: ImpressJS Slide Numbering
     description: >
       A plugin for ImpressJS that adds slide numbering functionality to presentations.
       Enhance your presentations at ImpressJS Slide Numbering
-    date: June 2023
+    date: January 2016
     tools:
       - javascript
       - impressjs
@@ -173,92 +286,3 @@ projects:
       - html
     project-link: https://tanay.tech/ImpressJS-Slide-Numbering/
     github-link: https://github.com/tanayseven/ImpressJS-Slide-Numbering
-
-
-  - name: Game of Life Implementations
-    description: >
-      Multiple implementations of Conway's Game of Life in different programming languages
-    date: April 2023
-    tools:
-      - javascript
-      - python
-    github-link: https://github.com/tanayseven/game-of-life
-
-
-  - name: Free Mind
-    description: >
-      A mindfulness and focusing application to help users  improve focus by blocking apps.
-    date: March 2023
-    tools:
-      - svelte
-      - go
-      - wails
-      - capacitor
-      - linux
-      - windows
-      - macos
-    project-link: https://freemind.tanay.tech
-    github-link: https://github.com/tanayseven/free-mind
-
-
-  - name: Play Nivo
-    description: >
-      A free and open-source set of classic mini-games playable across multiple platforms.
-    image: https://example.com/images/libre-game-floor.png
-    date: September 2025
-    tools:
-      - go
-      - svelte
-      - pixijs
-      - android
-      - ios
-      - browser
-      - windows
-      - macos
-      - linux
-#    project-link: https://playnivo.tanay.tech
-#    github-link: https://github.com/tanayseven/playnivo
-
-
-  - name: Left Unlocked
-    description: >
-      A prank and awareness webpage that shows a message for users who leave their devices
-      unlocked in public places or at work places
-    image: https://example.com/images/left-unlocked.png
-    date: January 2023
-    tools:
-      - html
-      - javascript
-      - css
-    project-link: https://leftunlocked.tanay.tech/
-    github-link: https://github.com/tanayseven/left-unlocked
-
-
-  - name: X Mas Greeting Card
-    description: >
-      An interactive digital Christmas greeting card with animations and personalization options.
-      Spread holiday cheer at X Mas Card
-    image: https://example.com/images/xmas-card.png
-    date: December 2022
-    tools:
-      - html
-      - css
-      - javascript
-      - kaplayjs
-    project-link: https://xmascard.example.com
-    github-link: https://github.com/tanayseven/xmas-card
-
-
-  - name: Astro Blog
-    description: >
-      A fast, modern blog built with Astro framework featuring markdown support and optimized performance
-      and a theme that is geared towards technical blogging
-    image: https://example.com/images/astro-blog.png
-    date: October 2022
-    tools:
-      - astro
-      - markdown
-      - tailwind-css
-      - typescript
-    project-link: https://blog.tanay.tech
-    github-link: https://github.com/tanayseven/blog.tanay.tech
